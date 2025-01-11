@@ -10,7 +10,7 @@ import (
 func main() {
 	e := echo.New()
 
-	e.Pre(middleware.RemoveTrailingSlash())
+	e.Pre(middleware.AddTrailingSlash())
 
 	e.GET("/healthz", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, map[string]interface{}{"status": "ok"})
